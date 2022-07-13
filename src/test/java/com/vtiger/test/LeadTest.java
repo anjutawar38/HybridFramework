@@ -34,6 +34,16 @@ public class LeadTest extends BaseTest {
 		LeadPage leadp= new LeadPage(driver);
 		leadp.clickNewLead();
 		leadp.creatmandatoryField( Leaddata.get(0).get("LastName"), Leaddata.get(0).get("Company"));
+		leadp.clickLogout();
+	}
+	@Test
+	public void creatLead2() {
+		LoginPage lp= new LoginPage(driver);
+		lp.login(Logindata.get(0).get("Userid"), Logindata.get(0).get("Password"));
+		LeadPage leadp= new LeadPage(driver);
+		leadp.clickNewLead();
+		leadp.creatmandatoryField( Leaddata.get(1).get("LastName"), Leaddata.get(1).get("Company"));
+		leadp.clickLogout();
 	}
 
 }

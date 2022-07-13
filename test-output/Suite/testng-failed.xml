@@ -5,7 +5,7 @@
     <classes>
       <class name="com.vtiger.test.LeadTest">
         <methods>
-          <include name="creatLead"/>
+          <include name="creatLead2"/>
           <include name="tearDown"/>
           <include name="launchApp"/>
         </methods>

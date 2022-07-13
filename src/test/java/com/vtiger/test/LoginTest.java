@@ -42,6 +42,13 @@ public class LoginTest extends BaseTest {
 		
 		lp.login(Logindata.get(0).get("Userid"), Logindata.get(0).get("Password"));
 		
+}
+	@Test
+	public void InvalidLogin() {
+		LoginPage lp= new LoginPage(driver);
+		
+		lp.login(Logindata.get(1).get("Userid"), Logindata.get(1).get("Password"));
+		System.out.println("User and password is incorrect");
 		
 		
 }
