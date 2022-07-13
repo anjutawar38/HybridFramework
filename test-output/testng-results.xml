@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="23583" started-at="2022-07-13T16:08:11 IST" finished-at="2022-07-13T16:08:35 IST">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="23583" started-at="2022-07-13T16:08:11 IST" finished-at="2022-07-13T16:08:35 IST">
+      <class name="com.vtiger.test.LeadTest">
+        <test-method status="PASS" signature="launchApp()[pri:0, instance:com.vtiger.test.LeadTest@29b5cd00]" name="launchApp" is-config="true" duration-ms="3220" started-at="2022-07-13T16:08:23 IST" finished-at="2022-07-13T16:08:27 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="creatLead()[pri:0, instance:com.vtiger.test.LeadTest@29b5cd00]" name="creatLead" duration-ms="7098" started-at="2022-07-13T16:08:27 IST" finished-at="2022-07-13T16:08:34 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- creatLead -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.vtiger.test.LeadTest@29b5cd00]" name="tearDown" is-config="true" duration-ms="840" started-at="2022-07-13T16:08:34 IST" finished-at="2022-07-13T16:08:35 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vtiger.test.LeadTest -->
+      <class name="com.vtiger.test.LoginTest">
+        <test-method status="PASS" signature="launchApp()[pri:0, instance:com.vtiger.test.LoginTest@e874448]" name="launchApp" is-config="true" duration-ms="7471" started-at="2022-07-13T16:08:11 IST" finished-at="2022-07-13T16:08:19 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApp -->
+        <test-method status="PASS" signature="validLogin()[pri:0, instance:com.vtiger.test.LoginTest@e874448]" name="validLogin" duration-ms="3741" started-at="2022-07-13T16:08:19 IST" finished-at="2022-07-13T16:08:22 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validLogin -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.vtiger.test.LoginTest@e874448]" name="tearDown" is-config="true" duration-ms="1114" started-at="2022-07-13T16:08:22 IST" finished-at="2022-07-13T16:08:23 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.vtiger.test.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

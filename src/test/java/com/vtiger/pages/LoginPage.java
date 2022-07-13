@@ -35,12 +35,12 @@ public class LoginPage {
 	//By Login_theme = By.name("login_theme");
 	//By btn_login= By.name("Login");
 	
-	public void login(String userid, String pwd, String theme) {
+	public void login(String userid, String pwd) {
 		usernameEditable();
 		logoDisplayed();
 		setusername(userid);
 		setpassword(pwd);
-		clickLogin(theme);		
+		gm.clickelement(btn_login);		
 		 
 	}
 	public boolean usernameEditable() {

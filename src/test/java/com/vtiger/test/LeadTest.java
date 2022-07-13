@@ -5,6 +5,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.vtiger.pages.LeadPage;
 import com.vtiger.pages.LoginPage;
 
 import org.testng.annotations.Test;
@@ -16,6 +17,8 @@ public class LeadTest extends BaseTest {
 	
 	@BeforeClass
 	public void launchApp() {
+		Logindata= readTestData("Login");
+		Leaddata=  readTestData("Leads");
       LaunchBrowser();
 
 	}
@@ -27,8 +30,10 @@ public class LeadTest extends BaseTest {
 	@Test
 	public void creatLead() {
 		LoginPage lp= new LoginPage(driver);
-		lp.login("admin", "admin", "blue");
-		System.out.println("creatLead");
+		lp.login(Logindata.get(0).get("Userid"), Logindata.get(0).get("Password"));
+		LeadPage leadp= new LeadPage(driver);
+		leadp.clickNewLead();
+		leadp.creatmandatoryField( Leaddata.get(0).get("LastName"), Leaddata.get(0).get("Company"));
 	}
 
 }

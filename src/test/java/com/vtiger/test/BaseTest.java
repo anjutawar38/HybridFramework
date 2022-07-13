@@ -2,6 +2,10 @@ package com.vtiger.test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -19,9 +23,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseTest {
 	public WebDriver driver;
 	public Properties prop;
+	public List<Map<String, String>> Logindata;
+	public List<Map<String, String>> Leaddata;
 	public void LaunchBrowser() {
 		
 		readProperties();
+		
 		if(prop.getProperty("browser").equals("chrome"))
 		{
 		WebDriverManager.chromedriver().setup();
@@ -59,17 +66,37 @@ public class BaseTest {
 		e.printStackTrace();
 	}
 	}
-	public void readTestData() throws Exception {
+	public List<Map<String, String>> readTestData(String Sheet)  {
+		 Connection connection=null;
+		 Recordset recordset= null;
+		 List<Map<String, String>> Allmap = null;
+		try {
 		Fillo fillo=new Fillo();
-		Connection connection=fillo.getConnection(System.getProperty("user.dir") + "/src/TestData/Data.xlsx");
-		String strQuery="Select * from Sheet1 where ID=100 and name='John'";
-		Recordset recordset=connection.executeQuery(strQuery);
+		 connection=fillo.getConnection(System.getProperty("user.dir") + "/src/TestData/Data.xlsx");
+		String strQuery="Select *from " +Sheet;
+		 recordset=connection.executeQuery(strQuery);
+		 List<String> lst= recordset.getFieldNames();
+		 Allmap= new  ArrayList<Map<String, String>>();
 		 
 		while(recordset.next()){
-		System.out.println(recordset.getField("Details"));
+		//System.out.println(recordset.getField("Details"));
+		Map<String, String> map= new HashMap<String, String>();
+		for(int i=0; i<=lst.size()-1;i++) {
+			System.out.println(lst.get(i));
+			map.put(lst.get(i), recordset.getField(lst.get(i)));
 		}
-		 
+		Allmap.add(map);
+		}
+		return Allmap;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		finally {
 		recordset.close();
 		connection.close();
+		}
+		return Allmap;
 	}
 }

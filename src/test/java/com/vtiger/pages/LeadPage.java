@@ -24,10 +24,10 @@ public class LeadPage extends Header {
 	WebElement tb_save;
 	
 	
-	public void creatmandatoryField(String firstname, String lastname, String company) {
-		gm.enterElement(tb_firstname, firstname);
-		gm.enterElement(tb_lastname, lastname);
-		gm.enterElement(tb_company, company);
+	public void creatmandatoryField(String LastName, String Company){
+		//gm.enterElement(tb_firstname, firstname);
+		gm.enterElement(tb_lastname, LastName);
+		gm.enterElement(tb_company, Company);
 		gm.clickelement(tb_save);
 	}
 	
